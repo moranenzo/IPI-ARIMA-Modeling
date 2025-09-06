@@ -12,7 +12,7 @@ library(fUnitRoots)
 
 ##### Loading source CSV files and initial observations #####
 
-df = read.csv(file = "valeurs_mensuelles.csv", sep = ";")
+df = read.csv(file = "data/IPI.csv", sep = ";")
 df2 = df[-c(1:3), ] # remove unnecessary columns
 df3 = df2[order(df2[[1]]), ] # sort by dates
 typeof(df3[2,2])
@@ -48,7 +48,7 @@ acf(serie, main = "ACF", lag.max = 100)
 
 # Load the seasonally adjusted series (CVS-CJO)
 
-df_cor = read.csv(file = "valeurs_mensuelles_corrigées.csv", sep = ";")
+df_cor = read.csv(file = "data/IPI_CVS-CJO.csv", sep = ";")
 df_cor2 = df_cor[-c(1:3), ] # remove unnecessary columns
 df_cor3 = df_cor2[order(df_cor2[[1]]), ] # sort by dates
 df_cor3[[2]] =as.numeric(df_cor3[[2]])
